@@ -1,12 +1,92 @@
 <!DOCTYPE html>
-<html lang="ja">
-    <head>
+<html>
+    <header>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="../public/index.css" />
-        <title>Document</title>
-    </head>
+        <title>Work time Manage</title>
+        <link type="text/css" rel="stylesheet" href="/css/style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300&family=Roboto+Condensed:wght@600&display=swap"
+            rel="stylesheet"
+        />
+        <meta name="description" content="勉強時間を気軽に管理" />
+    </header>
     <body>
-        <h1>hogehoge</h1>
+        <div class="tabs">
+            <input type="radio" name="tab_name" id="tab1" checked />
+            <label class="tab_class" for="tab1">Set Time</label>
+            <div class="content_class">
+                <!-- 目標時間入力のページ -->
+                <p>タブ1のコンテンツを表示します</p>
+            </div>
+            <input type="radio" name="tab_name" id="tab2" />
+            <label class="tab_class" for="tab2">Work Time</label>
+            <div class="content_class">
+                <!-- 作業時間のページ -->
+                <h1>working time</h1>
+
+                <!--作業時間-->
+                <figure name="time">
+                    <figcaption>作業時間 10h/30h</figcaption>
+                    <svg viewBox="0 0 63.6619772368 63.6619772368">
+                        <circle
+                            class="pie1"
+                            cx="31.8309886184"
+                            cy="31.8309886184"
+                            r="15.9154943092"
+                        />
+                        <circle
+                            class="pie2"
+                            cx="31.8309886184"
+                            cy="31.8309886184"
+                            r="15.9154943092"
+                        />
+                    </svg>
+                </figure>
+            </div>
+
+            <input type="radio" name="tab_name" id="tab3" />
+            <label class="tab_class" for="tab3">Work Detail</label>
+            <div class="content_class">
+                <!--作業内訳-->
+                <figure>
+                    <figcaption>SVG PIE Chart with CSS animation</figcaption>
+                    <svg viewBox="0 0 63.6619772368 63.6619772368">
+                        <circle
+                            class="pie1"
+                            cx="31.8309886184"
+                            cy="31.8309886184"
+                            r="15.9154943092"
+                        />
+                        <circle
+                            class="pie2"
+                            cx="31.8309886184"
+                            cy="31.8309886184"
+                            r="15.9154943092"
+                        />
+                        <circle
+                            class="pie3"
+                            cx="31.8309886184"
+                            cy="31.8309886184"
+                            r="15.9154943092"
+                        />
+                        <circle
+                            class="pie4"
+                            cx="31.8309886184"
+                            cy="31.8309886184"
+                            r="15.9154943092"
+                        />
+                    </svg>
+                </figure>
+            </div>
+
+            <input type="radio" name="tab_name" id="tab4" />
+            <label class="tab_class" for="tab4">Look Back</label>
+            <div class="content_class">
+                <!-- ふりかえりのページ -->
+                <p>タブ4のコンテンツを表示します</p>
+            </div>
+        </div>
     </body>
 </html>

@@ -9,7 +9,8 @@ const server = http.createServer(app);
 app.set("view engine", "ejs"); // テンプレートエンジンを設定
 app.set("views", __dirname + "/views"); // テンプレートファイルの場所を設定
 
-app.use(express.static("views"));
+app.use(express.static('views'));
+app.use(express.static('public'));
 
 app.get("/", (req, res) => {
     res.render("app.ejs");

@@ -6,8 +6,6 @@ const http = require("http");
 const app = express();
 const server = http.createServer(app);
 const axios = require("axios");
-const { receiveMessageOnPort } = require("worker_threads");
-const { ReceiverAuthenticityError } = require("@slack/bolt");
 const bodyParser = require("body-parser");
 
 app.set("view engine", "ejs"); // テンプレートエンジンを設定

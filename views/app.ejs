@@ -90,3 +90,227 @@
         </div>
     </body>
 </html>
+
+<style>
+    @charset "UTF-8";
+
+    /* 4つのタブ */
+    .tabs {
+        width: 100%;
+        margin: auto;
+        flex-wrap: wrap;
+        display: flex;
+    }
+
+    .tab_class {
+        width: calc(100% / 4);
+        height: 50px;
+        background-color: #eee;
+        line-height: 50px;
+        font-size: 15px;
+        text-align: center;
+        display: block;
+        float: left;
+        order: -1;
+    }
+
+    input[name="tab_name"] {
+        display: none;
+    }
+
+    input:checked + .tab_class {
+        background-color: cadetblue;
+        color: aliceblue;
+    }
+
+    .content_class {
+        display: none;
+        width: 100%;
+        border-bottom: 3px solid #eee;
+        border-right: 3px solid #eee;
+        border-left: 3px solid #eee;
+        padding: 30px 10px;
+    }
+
+    input:checked + .tab_class + .content_class {
+        display: block;
+    }
+
+    body {
+        background-color: honeydew;
+    }
+    h1 {
+        color: black;
+        font-family: "Noto Serif JP", serif;
+        font-family: "Roboto Condensed", sans-serif;
+    }
+
+    /*円グラフ表示*/
+    time {
+        display: block;
+        height: 10;
+        margin: 20;
+        position: relative;
+        font-size: 16px;
+        font-size: 1vw;
+        width: 40em;
+        padding-bottom: 100px;
+        animation: 3s;
+        animation-fill-mode: forwards;
+    }
+
+    figure {
+        display: block;
+        height: 0;
+        margin: 0 auto;
+        position: relative;
+        font-size: 16px;
+        font-size: 1vw;
+        width: 40em;
+        padding-top: 100px;
+        padding-bottom: 40em;
+    }
+    figcaption {
+        font-size: 1rem;
+        text-align: center;
+        color: #fff;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 40%;
+        z-index: 2;
+    }
+    svg {
+        display: block;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        overflow: visible;
+    }
+    circle {
+        fill: rgba(0, 0, 0, 0);
+        stroke-width: 31.8309886184;
+        stroke-dasharray: 0, 0, 0, 100;
+        stroke-dashoffset: 25;
+        -webkit-animation: pie1 3s;
+        animation: pie1 6s;
+        animation-fill-mode: forwards;
+    }
+    .pie3 {
+        stroke: hsl(180, 70%, 30%);
+    }
+    .pie4 {
+        stroke: hsl(180, 70%, 50%);
+        -webkit-animation-name: pie2;
+        animation-name: pie2;
+    }
+    .pie5 {
+        stroke: hsl(180, 70%, 20%);
+        -webkit-animation-name: pie3;
+        animation-name: pie3;
+    }
+    .pie6 {
+        stroke: hsl(180, 0%, 70%);
+        -webkit-animation-name: pie4;
+        animation-name: pie4;
+    }
+    .pie1 {
+        stroke: rgb(241, 143, 110);
+        -webkit-animation-name: pie1;
+        animation-name: pie1;
+    }
+    .pie2 {
+        stroke: black;
+        -webkit-animation-name: pie2;
+        animation-name: pie2;
+    }
+    /*
+   pie percentage made by stroke-dasharray.
+   stroke-dasharray format is...
+  
+   keyframe 100% : 0 offset this-percentage rest
+  
+   I added keyframe 50% for infinite presentation.
+  */
+
+    /* 1st pie is 40% */
+    @-webkit-keyframes pie1 {
+        50%,
+        100% {
+            stroke-dasharray: 60, 40, 0, 0;
+        }
+    }
+    @keyframes pie1 {
+        50%,
+        100% {
+            stroke-dasharray: 60, 40, 0, 0;
+        }
+    }
+    /* 2nd pie is 30% */
+    @-webkit-keyframes pie2 {
+        50%,
+        100% {
+            stroke-dasharray: 0, 40, 30, 30;
+        }
+    }
+    @keyframes pie2 {
+        50%,
+        100% {
+            stroke-dasharray: 0, 40, 30, 30;
+        }
+    }
+    /* 3rd pie is 30% */
+    @-webkit-keyframes pie3 {
+        50%,
+        100% {
+            stroke-dasharray: 0, 70, 20, 10;
+        }
+    }
+    @keyframes pie3 {
+        50%,
+        100% {
+            stroke-dasharray: 0, 70, 20, 10;
+        }
+    }
+    /* 4th pie is 10% */
+    @-webkit-keyframes pie4 {
+        50%,
+        100% {
+            stroke-dasharray: 0, 90, 10, 0;
+        }
+    }
+    @keyframes pie4 {
+        50%,
+        100% {
+            stroke-dasharray: 0, 90, 10, 0;
+        }
+    }
+    /* 5th pie is 10% */
+    @-webkit-keyframes pie5 {
+        50%,
+        100% {
+            stroke-dasharray: 0, 90, 10, 0;
+        }
+    }
+    @keyframes pie5 {
+        50%,
+        100% {
+            stroke-dasharray: 0, 90, 10, 0;
+        }
+    }
+    /* 6th pie is 10% */
+    @-webkit-keyframes pie6 {
+        50%,
+        100% {
+            stroke-dasharray: 0, 90, 10, 0;
+        }
+    }
+    @keyframes pie6 {
+        50%,
+        100% {
+            stroke-dasharray: 0, 90, 10, 0;
+        }
+    }
+</style>

@@ -55,6 +55,16 @@ app.get('/display-messages', (req, res) => {
       console.error('Error displaying messages:', error);
       res.status(500).send('Error displaying messages');
     }
+  }); 
+  app.get('/divide', (req, res) => {
+    try {
+      message = receivedMessage
+      res.status(200).send(message);
+      // res.status(200).send(receivedMessage);
+    } catch (error) {
+      console.error('Error displaying messages:', error);
+      res.status(500).send('Error displaying messages');
+    }
   });    
 
 app.get('/receive-message', (req, res) => {

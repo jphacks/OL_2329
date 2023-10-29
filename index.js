@@ -15,6 +15,7 @@ app.set("views", __dirname + "/views"); // テンプレートファイルの場�
 
 app.use(express.static("views"));
 app.use(express.static("public"));
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
@@ -23,7 +24,6 @@ const receivedMessage = [];
 
 app.get("/", (req, res) => {
     res.render("app.ejs");
-    // res.status(200).json("Welcome!!, your appSlack is working well");
 });
 
 app.get("/home", (req, res) => {
@@ -61,7 +61,6 @@ app.get("/receive-message", (req, res) => {
         sum1 += parseInt(item.num);
     });
     res.status(200).json(sum1);
-    // res.status(200).json('successfully');
 });
 
 app.listen(PORT, () => {

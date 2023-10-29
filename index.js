@@ -19,7 +19,7 @@ app.use(bodyParser.json());
 
 const slackEndpoint = 'https://storm-vagabond-salsa.glitch.me/slack/events/get'; // SlackのエンドポイントURL
 const receivedMessage = []
-
+let sum = 0;
 app.get("/", (req, res) => {
     res.render("app.ejs");
     // res.status(200).json("Welcome!!, your appSlack is working well");

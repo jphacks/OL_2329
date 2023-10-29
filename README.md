@@ -1,7 +1,7 @@
 # SlackJack
 
 https://ol-2329-p4ztmnm74-sattsunns-projects.vercel.app/
-[![IMAGE ALT TEXT HERE](https://jphacks.com/wp-content/uploads/2023/07/JPHACKS2023_ogp.png)](https://youtu.be/r-rJG-_BIPg)
+[![IMAGE ALT TEXT HERE](./public/images/スクリーンショット%202023-10-29%20142900.png)](https://youtu.be/r-rJG-_BIPg)
 
 ## 製品概要
 

@@ -62,7 +62,7 @@ app.get('/receive-message', (req, res) => {
       
         sum1 += parseInt(item.num);
   })
-  res.status(200).json(sum1);
+  res.status(200).json(receivedMessage);
     // res.status(200).json('successfully');
 });
 

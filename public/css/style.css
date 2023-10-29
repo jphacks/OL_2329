@@ -79,7 +79,10 @@ figure {
     padding-bottom: 40em;
   }
   figcaption {
-    font-size:1rem;
+    font-size: 60px;
+    font-family: 'Kosugi', sans-serif;
+    font-family: 'Noto Serif JP', serif;
+    font-family: 'Roboto Condensed', sans-serif;
     text-align:center;
     color:#fff;
     width: 100%;
@@ -130,7 +133,7 @@ figure {
     animation-name: pie1;
   }
   .pie2{
-    stroke: black;
+    stroke: rgba(239, 173, 151, 0.436);
     -webkit-animation-name: pie2;
     animation-name: pie2;
   }
@@ -143,20 +146,26 @@ figure {
    I added keyframe 50% for infinite presentation.
   */
   
-  /* 1st pie is 40% */
+
+  
+
+  /* 1,2 pie は作業時間の円グラフ */
+  /*割合をかえるのはここ*/
   @-webkit-keyframes pie1 {
-    50%,100% {stroke-dasharray: 60,40,0,0;}
+    50%,100% {stroke-dasharray: goal,70,0,0;}
   }
   @keyframes pie1 {
-    50%,100% {stroke-dasharray: 60,40,0,0;}
+    50%,100% {stroke-dasharray: 30,70,0,0;}
   }
-  /* 2nd pie is 30% */
   @-webkit-keyframes pie2 {
-    50%,100% {stroke-dasharray: 0,40,30,30;}
+    50%,100% {stroke-dasharray: 100,0,0,0;}
   }
   @keyframes pie2 {
-    50%,100% {stroke-dasharray: 0,40,30,30;}
+    50%,100% {stroke-dasharray: 100,0,0,0;}
   }
+
+
+  /*3,4,5,6 pieは作業内訳の円グラフ*/
   /* 3rd pie is 30% */
   @-webkit-keyframes pie3 {
     50%,100% {stroke-dasharray: 0,70,20,10;}

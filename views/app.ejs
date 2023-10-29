@@ -2,33 +2,284 @@
 <html>
 
   <header>
+
     <meta charset="UTF-8">
     <title>Work time Manage</title>
     <link type="text/css" rel="stylesheet" href="/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300&family=Roboto+Condensed:wght@600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kosugi&family=Noto+Serif+JP:wght@300&family=Roboto+Condensed:wght@600&display=swap" rel="stylesheet">
     <meta name="description" content="勉強時間を気軽に管理">
+    <title>SlackJack</title>
+    <script>
+      function goal(){
+        var goal = Number(sample_form.goal.value);
+        var cal_per = Number
+      }
+     
+    </script>
+
+
+<!--cssはここに記述-->
+  <style type="text/css">
+  @charset "UTF-8";
+
+/* 4つのタブ */
+.tabs {
+  width: 100%;
+  margin: auto;
+  flex-wrap: wrap;
+  display: flex;
+}
+
+.tab_class {
+  width: calc(100% / 4);
+  height: 50px;
+  background-color: #eee;
+  line-height: 50px;
+  font-size: 15px;
+  text-align: center;
+  display: block;
+  float: left;
+  order: -1;
+}
+
+input[name="tab_name"] {
+  display: none;
+}
+
+input:checked + .tab_class {
+  background-color: cadetblue;
+  color: aliceblue;
+}
+
+.content_class {
+  display: none;
+  width: 100%;
+  border-bottom: 3px solid #eee;
+  border-right: 3px solid #eee;
+  border-left: 3px solid #eee;
+  padding: 30px 10px;
+}
+
+input:checked + .tab_class + .content_class {
+  display: block;
+}
+
+
+body{
+    background-color: honeydew;
+}
+h1{
+    color: black;
+    font-family: 'Noto Serif JP', serif;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+p{
+  font-size: 30px;
+  font-family: 'Noto Serif JP', serif;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+/*円グラフ表示*/
+time{
+    
+    display: block;
+    height: 10;
+    margin: 20;
+    position: relative;
+    font-size:16px;
+    font-size:1vw;
+    width: 40em;
+    padding-bottom: 100px;
+    animation: 3s;
+    animation-fill-mode: forwards;
+}
+
+figure {
+    display: block;
+    height: 0;
+    margin: 0 auto;
+    position: relative;
+    font-size:16px;
+    font-size:1vw;
+    width: 40em;
+    padding-top: 100px;
+    padding-bottom: 40em;
+  }
+  figcaption {
+    font-size: 60px;
+    font-family: 'Kosugi', sans-serif;
+    font-family: 'Noto Serif JP', serif;
+    font-family: 'Roboto Condensed', sans-serif;
+    text-align:center;
+    color:#fff;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top:40%;
+    z-index:2;
+  }
+  svg {
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: visible;
+  }
+  circle {
+    fill:rgba(0,0,0,0);
+    stroke-width:31.8309886184;
+    stroke-dasharray: 0,0,0,100;
+    stroke-dashoffset: 25;
+    -webkit-animation: pie1 3s;
+    animation: pie1 6s;
+    animation-fill-mode:forwards
+  }
+  .pie3 {
+    stroke:hsl(180,70%,30%);
+  }
+  .pie4 {
+    stroke:hsl(180,70%,50%);
+    -webkit-animation-name: pie2;
+    animation-name: pie2;
+  }
+  .pie5 {
+    stroke:hsl(180,70%,20%);
+    -webkit-animation-name: pie3;
+    animation-name: pie3;
+  }
+  .pie6 {
+    stroke:hsl(180,0%,70%);
+    -webkit-animation-name: pie4;
+    animation-name: pie4;
+  }
+  .pie1{
+    stroke: rgb(241, 143, 110);
+    -webkit-animation-name: pie1;
+    animation-name: pie1;
+  }
+  .pie2{
+    stroke: rgba(239, 173, 151, 0.436);
+    -webkit-animation-name: pie2;
+    animation-name: pie2;
+  }
+  /*
+   pie percentage made by stroke-dasharray.
+   stroke-dasharray format is...
+  
+   keyframe 100% : 0 offset this-percentage rest
+  
+   I added keyframe 50% for infinite presentation.
+  */
+  
+
+  
+
+  /* 1,2 pie は作業時間の円グラフ */
+  /*割合をかえるのはここ*/
+  @-webkit-keyframes pie1 {
+    50%,100% {stroke-dasharray: 30,70,0,0;}
+  }
+  @keyframes pie1 {
+    50%,100% {stroke-dasharray: 30,70,0,0;}
+  }
+  @-webkit-keyframes pie2 {
+    50%,100% {stroke-dasharray: 100,0,0,0;}
+  }
+  @keyframes pie2 {
+    50%,100% {stroke-dasharray: 100,0,0,0;}
+  }
+
+  /*変数にするコード
+  :root {
+    --pie1-percent: 70; 
+    --pie2-percent: 100; 
+  }
+  
+  @-webkit-keyframes pie1 {
+    50%,100% {stroke-dasharray: var(--pie1-percent), calc(100 - var(--pie1-percent)), 0, 0;}
+  }
+  
+  @keyframes pie1 {
+    50%,100% {stroke-dasharray: var(--pie1-percent), calc(100 - var(--pie1-percent)), 0, 0;}
+  }
+  
+  @-webkit-keyframes pie2 {
+    50%,100% {stroke-dasharray: var(--pie2-percent), calc(100 - var(--pie2-percent)), 0, 0;}
+  }
+  
+  @keyframes pie2 {
+    50%,100% {stroke-dasharray: var(--pie2-percent), calc(100 - var(--pie2-percent)), 0, 0;}
+  }*/
+  
+
+
+  /*3,4,5,6 pieは作業内訳の円グラフ*/
+  /* 3rd pie is 30% */
+  @-webkit-keyframes pie3 {
+    50%,100% {stroke-dasharray: 0,70,20,10;}
+  }
+  @keyframes pie3 {
+    50%,100% {stroke-dasharray: 0,70,20,10;}
+  }
+  /* 4th pie is 10% */
+  @-webkit-keyframes pie4 {
+    50%,100% {stroke-dasharray: 0,90,10,0;}
+  }
+  @keyframes pie4 {
+    50%,100% {stroke-dasharray: 0,90,10,0;}
+  }
+  /* 5th pie is 10% */
+  @-webkit-keyframes pie5 {
+    50%,100% {stroke-dasharray: 0,90,10,0;}
+  }
+  @keyframes pie5 {
+    50%,100% {stroke-dasharray: 0,90,10,0;}
+  }
+  /* 6th pie is 10% */
+  @-webkit-keyframes pie6 {
+    50%,100% {stroke-dasharray: 0,90,10,0;}
+  }
+  @keyframes pie6 {
+    50%,100% {stroke-dasharray: 0,90,10,0;}
+  }
+  
+  </style>
+
   </header>
+
+
+
+
     <body>
+      <h1>SlackJack</h1>
+
       <div class="tabs">
         <input type="radio" name="tab_name" id="tab1" checked />
         <label class="tab_class" for="tab1">Set Time</label>
         <div class="content_class">
-          <!-- 目標時間入力のページ -->
-          <p>タブ1のコンテンツを表示します</p>
-          
+          <!-- ①目標時間入力のページ -->
+          <p>今週の目標時間は</p>
+          <!--あいりからもらう目標時間の入力テスト-->
+          <label for="goal">目標時間を入力してください(分)</label>
+          <input type="number"name="goal" id="number_button">
+          <!--ここまで-->
         </div>
         <input type="radio" name="tab_name" id="tab2" />
         <label class="tab_class" for="tab2">Work Time</label>
         <div class="content_class">
 
-          <!-- 作業時間のページ -->
-           <h1>working time</h1>
+          <!-- ②作業時間のページ -->
+           <h2>working time</h2>
           
-          <!--作業時間-->
           <figure name="time">
-            <figcaption>作業時間   10h/30h</figcaption>
+            <figcaption>作業時間<br>10h/30h</figcaption>
             <svg viewBox="0 0 63.6619772368 63.6619772368">
               <circle class="pie1" cx="31.8309886184" cy="31.8309886184" r="15.9154943092"/>
               <circle class="pie2" cx="31.8309886184" cy="31.8309886184" r="15.9154943092"/>
@@ -39,25 +290,31 @@
         <input type="radio" name="tab_name" id="tab3" />
         <label class="tab_class" for="tab3">Work Detail</label>
         <div class="content_class">
-          <!--作業内訳-->
+          
+          
+          <!--③作業内訳-->
           <figure>
-            <figcaption>SVG PIE Chart with CSS animation</figcaption>
+           <!--<figcaption>SVG PIE Chart with CSS animation</figcaption>-->
             <svg viewBox="0 0 63.6619772368 63.6619772368">
               <circle class="pie1" cx="31.8309886184" cy="31.8309886184" r="15.9154943092"/>
               <circle class="pie2" cx="31.8309886184" cy="31.8309886184" r="15.9154943092"/>
               <circle class="pie3" cx="31.8309886184" cy="31.8309886184" r="15.9154943092"/>
               <circle class="pie4" cx="31.8309886184" cy="31.8309886184" r="15.9154943092"/>
             </svg>
+            
           </figure>
         </div>
 
         <input type="radio" name="tab_name" id="tab4" />
         <label class="tab_class" for="tab4">Look Back</label>
         <div class="content_class">
-          <!-- ふりかえりのページ -->
+          <!-- ④ふりかえりのページ -->
           <p>タブ4のコンテンツを表示します</p>
         </div>
       </div>
     </body>
  
 </html>
+
+
+

@@ -60,11 +60,11 @@ app.get('/display-messages', (req, res) => {
     try {
       let register1 = null;
       let allsum = 0;
-      let goal = receivedMessage;
-      register1 = receivedMessage.register
-      let registerNum = register1.length;
+      let goal = receivedMessage[0].goal;
+      register1 = receivedMessage[0].register
+      // let registerNum = register1.length;
 
-      res.status(200).send(register1,allsum,goal,registerNum);
+      res.status(200).send(register1,allsum,goal);
       // res.status(200).send(receivedMessage);
     } catch (error) {
       console.error('Error displaying messages:', error);

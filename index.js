@@ -48,7 +48,7 @@ app.post('/receive-message', (req, res) => {
     });
 app.get('/display-messages', (req, res) => {
     try {
-      message = receivedMessage
+      let message = receivedMessage
       res.status(200).send(message);
       // res.status(200).send(receivedMessage);
     } catch (error) {
@@ -58,8 +58,13 @@ app.get('/display-messages', (req, res) => {
   }); 
   app.get('/divide', (req, res) => {
     try {
-      message = receivedMessage
-      res.status(200).send(message);
+      let register1 = null;
+      let allsum = 0;
+      let goal = receivedMessage;
+      register1 = receivedMessage.register
+      let registerNum = register1.length;
+
+      res.status(200).send(register1,allsum,goal,registerNum);
       // res.status(200).send(receivedMessage);
     } catch (error) {
       console.error('Error displaying messages:', error);
